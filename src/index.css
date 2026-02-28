@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Hide scrollbar for clean aesthetic but keep functionality */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db; 
+}
