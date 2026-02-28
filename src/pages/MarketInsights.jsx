@@ -10,13 +10,10 @@ const MarketInsights = () => {
         <div className="container mx-auto px-6 md:px-12 max-w-4xl">
           <FadeIn>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8">Market Intelligence.</h1>
-            <p className="text-xl text-gray-500 leading-relaxed">
-              Stay ahead of the curve with our curated insights, data analysis, and strategic advice for the modern real estate market.
-            </p>
+            <p className="text-xl text-gray-500"> Stay ahead of the curve with our curated insights. </p>
           </FadeIn>
         </div>
       </section>
-      
       <InsightsSection />
       <Valuation />
     </div>

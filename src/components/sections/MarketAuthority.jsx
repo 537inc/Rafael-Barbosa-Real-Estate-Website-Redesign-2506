@@ -4,18 +4,9 @@ import Button from '../ui/Button';
 
 const MarketAuthority = () => {
   const markets = [
-    {
-      name: "Upper Manhattan",
-      desc: "Navigating the nuances of historic brownstones, luxury co-ops, and modern condos across diverse uptown neighborhoods."
-    },
-    {
-      name: "The Bronx",
-      desc: "Expertise in one of NYC's most dynamic markets, from Riverdale estates to multi-family investment properties."
-    },
-    {
-      name: "Lower Westchester",
-      desc: "Guiding sellers through the competitive suburban landscape, highlighting community value and commuter convenience."
-    }
+    { name: "Upper Manhattan", desc: "Historic brownstones, luxury co-ops, and modern condos." },
+    { name: "The Bronx", desc: "From Riverdale estates to investment properties." },
+    { name: "Lower Westchester", desc: "Competitive suburban landscape and commuter convenience." }
   ];
 
   return (
@@ -24,10 +15,9 @@ const MarketAuthority = () => {
         <div className="text-center max-w-3xl mx-auto mb-20">
           <FadeIn>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">Market Expertise That Moves Homes.</h2>
-            <p className="text-xl text-gray-500">Deep localized knowledge across our core territories ensures your property is positioned to attract the right demographic.</p>
+            <p className="text-xl text-gray-500">Deep localized knowledge across our core territories.</p>
           </FadeIn>
         </div>
-
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {markets.map((market, idx) => (
             <FadeIn key={idx} delay={idx * 0.1} className="bg-white p-12 shadow-sm border border-gray-100">
@@ -36,7 +26,6 @@ const MarketAuthority = () => {
             </FadeIn>
           ))}
         </div>
-
         <div className="text-center">
           <FadeIn delay={0.3}>
             <Button to="/market-insights" variant="outline">View Market Insights</Button>

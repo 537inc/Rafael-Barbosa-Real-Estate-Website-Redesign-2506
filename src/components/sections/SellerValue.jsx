@@ -4,22 +4,10 @@ import Button from '../ui/Button';
 
 const SellerValue = () => {
   const values = [
-    {
-      title: "Strategic Pricing",
-      desc: "Data-backed valuation models to position your home aggressively without leaving money on the table."
-    },
-    {
-      title: "Modern Exposure",
-      desc: "Targeted digital advertising, high-end visual media, and proprietary network distribution."
-    },
-    {
-      title: "Strong Negotiation",
-      desc: "Fierce advocacy to secure the best terms, highest price, and most qualified buyers."
-    },
-    {
-      title: "Clear Process",
-      desc: "Streamlined management from listing preparation to the closing table, ensuring peace of mind."
-    }
+    { title: "Strategic Pricing", desc: "Data-backed valuation models to position your home aggressively." },
+    { title: "Modern Exposure", desc: "Targeted digital advertising and high-end visual media." },
+    { title: "Strong Negotiation", desc: "Fierce advocacy to secure the best terms and highest price." },
+    { title: "Clear Process", desc: "Streamlined management from listing to the closing table." }
   ];
 
   return (
@@ -33,7 +21,6 @@ const SellerValue = () => {
             <Button to="/contact">Book Strategy Call</Button>
           </div>
         </FadeIn>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           {values.map((item, idx) => (
             <FadeIn key={idx} delay={idx * 0.1}>

@@ -22,14 +22,12 @@ const Trust = () => {
               A Strategic Approach to Selling in Today's Market.
             </h2>
           </FadeIn>
-          
           <div className="grid md:grid-cols-2 gap-16 mb-16">
             <FadeIn delay={0.1}>
               <p className="text-xl text-gray-500 leading-relaxed">
-                Selling a property requires more than just listing it on the MLS. It demands a tailored strategy, deep market knowledge, and an unwavering commitment to protecting your equity. 
+                Selling a property requires more than just listing it on the MLS. It demands a tailored strategy, deep market knowledge, and an unwavering commitment to protecting your equity.
               </p>
             </FadeIn>
-            
             <FadeIn delay={0.2}>
               <ul className="space-y-4">
                 {points.map((point, idx) => (
@@ -41,7 +39,6 @@ const Trust = () => {
               </ul>
             </FadeIn>
           </div>
-
           <FadeIn delay={0.3}>
             <Button to="/about" variant="outline">Learn More About Rafael</Button>
           </FadeIn>

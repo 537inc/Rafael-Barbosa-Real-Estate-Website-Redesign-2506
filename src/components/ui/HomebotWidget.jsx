@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 
 const HomebotWidget = ({ className = "" }) => {
   useEffect(() => {
-    // Unique ID for the initialization script to prevent multiple loads
     const scriptId = 'homebot-init-script';
-    
     if (!document.getElementById(scriptId)) {
       (function (h, b) {
         var w = window, d = document, s = 'script', x, y;
@@ -19,7 +17,6 @@ const HomebotWidget = ({ className = "" }) => {
       })('Homebot', 'https://embed.homebotapp.com/lgw/v1/widget.js');
     }
 
-    // Initialize the widget after a short delay to ensure script has executed
     const initTimer = setTimeout(() => {
       if (window.Homebot) {
         window.Homebot('#homebot_homeowner', 'f8bdf1a69c5851d5f9821ff58132f0712addb84f251a08fe');
