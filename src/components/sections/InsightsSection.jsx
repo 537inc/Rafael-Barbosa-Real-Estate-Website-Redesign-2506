@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FadeIn from '../ui/FadeIn';
 import { Link } from 'react-router-dom';
 
-const CORS_PROXY = 'https://corsproxy.io/?';
+const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 const GHL_API_URL = `${CORS_PROXY}https://services.leadconnectorhq.com/blogs/posts?locationId=YX80CMe65N0bX5qNSceP&blogId=rKX2UDvy7OIAvnDiJr5o&status=published&limit=3`;
 
 const InsightsSection = () => {
