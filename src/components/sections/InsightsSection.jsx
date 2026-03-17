@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import FadeIn from '../ui/FadeIn';
 import { Link } from 'react-router-dom';
 
+const CORS_PROXY = 'https://corsproxy.io/?';
+const GHL_API_URL = `${CORS_PROXY}https://services.leadconnectorhq.com/blogs/posts?locationId=YX80CMe65N0bX5qNSceP&blogId=rKX2UDvy7OIAvnDiJr5o&status=published&limit=3`;
+
 const InsightsSection = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,15 +12,12 @@ const InsightsSection = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(
-          'https://services.leadconnectorhq.com/blogs/posts?locationId=YX80CMe65N0bX5qNSceP&blogId=rKX2UDvy7OIAvnDiJr5o&status=published&limit=3',
-          {
-            headers: {
-              'Authorization': 'Bearer pit-95638405-d1a0-46a6-9869-70a27468e7da',
-              'Version': '2021-04-15'
-            }
+        const response = await fetch(GHL_API_URL, {
+          headers: {
+            'Authorization': 'Bearer pit-95638405-d1a0-46a6-9869-70a27468e7da',
+            'Version': '2021-04-15'
           }
-        );
+        });
         const data = await response.json();
         setPosts(data.posts || []);
       } catch (err) {
@@ -26,22 +26,19 @@ const InsightsSection = () => {
         setLoading(false);
       }
     };
-
     fetchPosts();
   }, []);
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
+      month: 'short', day: 'numeric', year: 'numeric'
     }).toUpperCase();
   };
 
   const fallbackPosts = [
-    { title: "Strategic Pricing Models", description: "Understanding market dynamics to maximize return.", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80", updatedAt: "2024-01-01", url: "#" },
-    { title: "ROI of Pre-Listing Prep", description: "Renovations that yield the highest return.", imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", updatedAt: "2024-01-01", url: "#" },
-    { title: "Navigating Co-op Packages", description: "Ensuring board approval with precision.", imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", updatedAt: "2024-01-01", url: "#" }
+    { title: "Strategic Pricing Models", description: "Understanding market dynamics to maximize return.", imageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80", updatedAt: "2024-01-01" },
+    { title: "ROI of Pre-Listing Prep", description: "Renovations that yield the highest return.", imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80", updatedAt: "2024-01-01" },
+    { title: "Navigating Co-op Packages", description: "Ensuring board approval with precision.", imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80", updatedAt: "2024-01-01" }
   ];
 
   const displayPosts = posts.length > 0 ? posts : fallbackPosts;
@@ -79,7 +76,7 @@ const InsightsSection = () => {
                     />
                   </div>
                   <p className="text-xs font-bold tracking-widest text-gray-400 mb-3">
-                    {formatDate(post.updatedAt || post.updatedAt)}
+                    {formatDate(post.updatedAt)}
                   </p>
                   <h3 className="text-xl font-bold tracking-tight mb-3">{post.title}</h3>
                   <p className="text-gray-500 leading-relaxed mb-4">
