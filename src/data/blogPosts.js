@@ -1,6 +1,6 @@
 /**
  * Manual Blog Post Data
- * Add new posts to the top of this array to show them as "Most Recent"
+ * Updated with Unsplash URLs to resolve CORS issues on deployment.
  */
 export const blogPosts = [
   {
