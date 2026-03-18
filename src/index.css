@@ -8,6 +8,46 @@
   }
 }
 
+@layer components {
+  /* Premium Blog Content Styling */
+  .blog-content h2 {
+    @apply text-3xl md:text-4xl font-black tracking-tighter uppercase mt-16 mb-8 text-black leading-none;
+  }
+
+  .blog-content h3 {
+    @apply text-xl md:text-2xl font-bold tracking-tight uppercase mt-12 mb-6 text-black;
+  }
+
+  .blog-content p {
+    @apply text-lg text-gray-600 leading-relaxed mb-8 font-light;
+  }
+
+  .blog-content strong {
+    @apply font-bold text-black;
+  }
+
+  .blog-content ul {
+    @apply list-none mb-10 space-y-4;
+  }
+
+  .blog-content li {
+    @apply relative pl-8 text-lg text-gray-600 font-light leading-relaxed flex items-start;
+  }
+
+  .blog-content li::before {
+    content: "";
+    @apply absolute left-0 top-[0.6em] w-3 h-[2px] bg-black;
+  }
+
+  .blog-content blockquote {
+    @apply border-l-4 border-black pl-8 py-2 my-12 italic text-2xl text-gray-900 font-light tracking-tight;
+  }
+
+  .blog-content a {
+    @apply text-black underline decoration-1 underline-offset-4 hover:text-gray-500 transition-colors;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
