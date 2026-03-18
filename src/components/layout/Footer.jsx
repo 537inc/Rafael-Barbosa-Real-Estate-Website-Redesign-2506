@@ -16,20 +16,20 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h3 className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-6">Contact</h3>
+            <h3 className="text-xs font-bold tracking-widest uppercase text-gray-300 mb-6">Contact</h3>
             <div className="space-y-3">
               <a href="tel:347-679-6817" className="block text-lg hover:text-gray-600 transition-colors">347-679-6817</a>
               <a href="mailto:rb@serhant.com" className="block text-lg hover:text-gray-600 transition-colors">rb@serhant.com</a>
             </div>
           </div>
           <div>
-            <h3 className="text-xs font-bold tracking-widest uppercase text-gray-400 mb-6">Legal</h3>
+            <h3 className="text-xs font-bold tracking-widest uppercase text-gray-300 mb-6">Legal</h3>
             <ul className="space-y-3 text-sm text-gray-500">
               <li><Link to="/privacy" className="hover:text-black transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="hover:text-black transition-colors">Terms of Service</Link></li>
               <li><Link to="/sop" className="hover:text-black transition-colors">Standard Operating Procedure</Link></li>
               <li><Link to="/fair-housing" className="hover:text-black transition-colors">Fair Housing Notice</Link></li>
-              <li><Link to="/accessibility" className="hover:text-black transition-colors">Accessibility</Link></li>
+              <li><Link to="/accessibility" className="hover:text-black transition-colors">Accessibility Statement</Link></li>
             </ul>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Footer = () => {
             <p className="mb-2">
               <span className="font-bold text-gray-900">Equal Housing Opportunity.</span> All information deemed reliable but not guaranteed.
             </p>
-            <p>&copy; {currentYear} The Barbosa Team. All rights reserved.</p>
+            <p>&copy;{currentYear} The Barbosa Team. All rights reserved.</p>
           </div>
         </div>
       </div>

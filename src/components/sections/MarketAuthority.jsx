@@ -4,9 +4,21 @@ import Button from '../ui/Button';
 
 const MarketAuthority = () => {
   const markets = [
-    { name: "Upper Manhattan", desc: "Historic brownstones, luxury co-ops, and modern condos." },
-    { name: "The Bronx", desc: "From Riverdale estates to investment properties." },
-    { name: "Lower Westchester", desc: "Competitive suburban landscape and commuter convenience." }
+    { 
+      name: "Riverdale", 
+      desc: "Historic brownstones, luxury co-ops, and modern condos in a leafy enclave.",
+      path: "/riverdale"
+    },
+    { 
+      name: "The Bronx", 
+      desc: "From Riverdale estates to investment properties with significant growth potential.",
+      path: "/the-bronx"
+    },
+    { 
+      name: "Lower Westchester", 
+      desc: "A competitive suburban landscape offering commuter convenience and luxury living.",
+      path: "/westchester"
+    }
   ];
 
   return (
@@ -14,21 +26,28 @@ const MarketAuthority = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <FadeIn>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter mb-6">Market Expertise That Moves Homes.</h2>
-            <p className="text-xl text-gray-500">Deep localized knowledge across our core territories.</p>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-6 uppercase">
+              Where is the Best Real Estate Investment in 2026?
+            </h2>
+            <p className="text-xl text-gray-500">
+              Deep localized knowledge across New York's most resilient markets.
+            </p>
           </FadeIn>
         </div>
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {markets.map((market, idx) => (
-            <FadeIn key={idx} delay={idx * 0.1} className="bg-white p-12 shadow-sm border border-gray-100">
-              <h3 className="text-2xl font-bold tracking-tight mb-4">{market.name}</h3>
-              <p className="text-gray-500 leading-relaxed">{market.desc}</p>
+            <FadeIn key={idx} delay={idx * 0.1} className="bg-white p-12 shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+              <h3 className="text-2xl font-bold tracking-tight mb-4 uppercase">
+                Exploring {market.name}?
+              </h3>
+              <p className="text-gray-500 leading-relaxed mb-8">{market.desc}</p>
+              <Button to={market.path} variant="outline" className="w-full text-[10px]">View Market Guide</Button>
             </FadeIn>
           ))}
         </div>
         <div className="text-center">
           <FadeIn delay={0.3}>
-            <Button to="/market-insights" variant="outline">View Market Insights</Button>
+            <Button to="/market-insights" variant="outline">Browse All Intelligence</Button>
           </FadeIn>
         </div>
       </div>

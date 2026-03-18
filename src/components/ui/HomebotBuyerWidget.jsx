@@ -1,0 +1,36 @@
+import React, { useEffect } from 'react';
+
+const HomebotBuyerWidget = ({ className = "" }) => {
+  useEffect(() => {
+    const scriptId = 'homebot-init-script-buyer';
+    if (!document.getElementById(scriptId)) {
+      (function (h, b) {
+        var w = window, d = document, s = 'script', x, y;
+        w['__hb_namespace'] = h;
+        w[h] = w[h] || function () { (w[h].q = w[h].q || []).push(arguments) };
+        y = d.createElement(s);
+        y.id = scriptId;
+        x = d.getElementsByTagName(s)[0];
+        y.async = 1;
+        y.src = b;
+        x.parentNode.insertBefore(y, x);
+      })('Homebot', 'https://embed.homebotapp.com/lgw/v1/widget.js');
+    }
+
+    const initTimer = setTimeout(() => {
+      if (window.Homebot) {
+        window.Homebot('#homebot_buyer', 'f8bdf1a69c5851d5f9821ff58132f0712addb84f251a08fe', { 'mode': 'buyers-mode' });
+      }
+    }, 500);
+
+    return () => clearTimeout(initTimer);
+  }, []);
+
+  return (
+    <div className={`w-full min-h-[400px] ${className}`}>
+      <div id="homebot_buyer" className="w-full"></div>
+    </div>
+  );
+};
+
+export default HomebotBuyerWidget;
